@@ -1,0 +1,33 @@
+﻿@page "/counterserver"
+@rendermode InteractiveServerNoPreRender
+
+<PageTitle>Counter Server</PageTitle>
+
+<h1>Counter Interactive Server</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<p>Where Am I : @_location</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private static IComponentRenderMode InteractiveServerNoPreRender = new InteractiveServerRenderMode(prerender: false);
+    
+    private string _location = "I don't know";
+
+    private int currentCount = 0;
+
+
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    protected override void OnInitialized()
+    {
+        _location = OperatingSystem.IsBrowser() ? "On the client" : "On the server";
+        base.OnInitialized();
+    }
+}

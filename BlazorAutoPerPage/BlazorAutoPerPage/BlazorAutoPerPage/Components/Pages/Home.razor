@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<p>Where Am I : @_location</p>
+
+Welcome to your new app.
+
+
+@code {
+
+    private string _location = "I don't know";
+
+    protected override void OnInitialized()
+    {
+        _location = OperatingSystem.IsBrowser() ? "On the client" : "On the server";
+        base.OnInitialized();
+    }
+}
