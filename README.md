@@ -4,7 +4,7 @@
 
 This repository contains the solutions used to discuss .NET 8 Blazor render modes and prerendering.
 
-Each solution is in its own folder and runs in isolation fomr the others as of the YouTube video.
+Each solution is in its own folder and runs in isolation from the others as of the YouTube video.
 
 YouTube video : https://www.youtube.com/watch?v=UBxDhIL31MI
 
